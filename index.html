@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CompliTracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-600 p-4 shadow-lg">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <h1 class="text-white text-xl font-semibold">CompliTracker</h1>
+        <div class="flex space-x-6">
+          <!-- Problem Dropdown -->
+          <div class="relative group">
+            <span class="text-white cursor-pointer">Problem</span>
+            <div
+              class="absolute left-0 mt-2 hidden group-hover:block bg-white text-gray-700 shadow-lg p-3 rounded-md w-64"
+            >
+              <p>
+                Hospitals face frequent form rejections due to incorrect or
+                missing information. Rejected forms delay insurance claims,
+                impacting hospital revenue and efficiency.
+              </p>
+            </div>
+          </div>
+          <!-- Solution Dropdown -->
+          <div class="relative group">
+            <span class="text-white cursor-pointer">Solution</span>
+            <div
+              class="absolute left-0 mt-2 hidden group-hover:block bg-white text-gray-700 shadow-lg p-3 rounded-md w-64"
+            >
+              <p>
+                Our software identifies likely rejected forms and suggests
+                corrections using ML-powered database verification.
+              </p>
+            </div>
+          </div>
+          <!-- Meet the Team Dropdown -->
+          <div class="relative group">
+            <span class="text-white cursor-pointer">Meet the Team</span>
+            <div
+              class="absolute left-0 mt-2 hidden group-hover:block bg-white text-gray-700 shadow-lg p-3 rounded-md w-64"
+            >
+              <ul>
+                <li>Sayan</li>
+                <li>Hitu</li>
+                <li>Pragalv</li>
+                <li>Terrell</li>
+                <li>Raymond</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div
+      class="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto mt-6"
+    >
+      <h1 class="text-2xl font-semibold text-center text-gray-700 mb-6">
+        CompliTracker
+      </h1>
+
+      <!-- File input for JSON upload -->
+      <input
+        type="file"
+        id="file-input"
+        accept=".json"
+        class="mb-4 px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer"
+      />
+
+      <!-- Clear button to remove data -->
+      <button
+        id="clear-button"
+        class="mb-4 px-4 py-2 bg-red-500 text-white rounded-lg cursor-pointer hover:bg-red-800"
+      >
+        Clear
+      </button>
+
+      <table
+        class="min-w-full table-auto bg-white border-collapse shadow-md rounded-lg"
+      >
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th
+              class="px-4 py-3 text-left text-sm font-medium w-1/6 border-r border-black"
+            >
+              ID
+            </th>
+            <th
+              class="px-4 py-3 text-left text-sm font-medium w-2/6 border-r border-black"
+            >
+              Error
+            </th>
+            <th class="px-4 py-3 text-left text-sm font-medium w-1/6">
+              Probability
+            </th>
+          </tr>
+        </thead>
+        <tbody id="error-list">
+          <!-- Errors will be dynamically added here -->
+          <tr class="hover:bg-gray-100">
+            <td
+              class="px-4 py-3 text-sm text-gray-600 border-r border-black"
+            ></td>
+            <td
+              class="px-4 py-3 text-sm text-gray-600 border-r border-black"
+            ></td>
+            <td class="px-4 py-3 text-sm text-gray-600"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
